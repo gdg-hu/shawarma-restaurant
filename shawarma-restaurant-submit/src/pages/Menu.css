@@ -1,0 +1,674 @@
+.menu-page {
+  min-height: 100vh;
+  padding-top: 64px;
+  background: #f5f0e8;
+  direction: rtl;
+}
+
+/* ─── MENU BOARD ─── */
+.menu-board {
+  background: #f9f5ed;
+  border: 3px solid #c8b88a;
+  border-radius: 8px;
+  padding: 1rem 1.5rem;
+  max-width: 380px;
+  margin: 1rem auto;
+  font-family: 'Courier New', monospace;
+  box-shadow: 3px 3px 0 #c8b88a;
+}
+
+.board-title {
+  text-align: center;
+  font-weight: 900;
+  font-size: 1.3rem;
+  color: #3d2000;
+  border-bottom: 2px solid #c8b88a;
+  padding-bottom: 0.5rem;
+  margin-bottom: 0.5rem;
+  font-family: var(--font-ar);
+}
+
+.board-row {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  color: #3d2000;
+  padding: 0.2rem 0;
+}
+
+.board-dots {
+  flex: 1;
+  border-bottom: 2px dotted #c8b88a;
+  margin: 0 0.5rem;
+  height: 1px;
+  align-self: flex-end;
+  margin-bottom: 4px;
+}
+
+.board-price { font-weight: 700; color: #8b4513; }
+
+/* ─── CONTROLS ─── */
+.controls-bar {
+  background: #fff;
+  border-bottom: 2px solid #ddd;
+  padding: 0.8rem 1.5rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: center;
+  flex-wrap: wrap;
+  position: sticky;
+  top: 64px;
+  z-index: 50;
+}
+
+.search-input {
+  padding: 0.5rem 1rem;
+  border: 2px solid #c8b88a;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  font-family: var(--font-ar);
+  background: #faf7f0;
+  color: #3d2000;
+  min-width: 180px;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.search-input:focus { border-color: #8b4513; }
+
+.sort-select {
+  padding: 0.5rem 0.75rem;
+  border: 2px solid #c8b88a;
+  border-radius: 8px;
+  font-size: 0.9rem;
+  font-family: var(--font-ar);
+  background: #faf7f0;
+  color: #3d2000;
+  cursor: pointer;
+  outline: none;
+}
+
+.cat-filters {
+  display: flex;
+  gap: 0.4rem;
+  flex-wrap: wrap;
+}
+
+.cat-btn {
+  padding: 0.3rem 0.75rem;
+  border-radius: 20px;
+  border: 2px solid #c8b88a;
+  background: transparent;
+  color: #5a3a1a;
+  font-size: 0.8rem;
+  font-family: var(--font-ar);
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.cat-btn:hover { background: #f0e6d0; }
+.cat-btn.active { background: #8b4513; color: #fff; border-color: #8b4513; }
+
+/* ─── COUNTER SCENE ─── */
+.counter-scene {
+  position: relative;
+  background: #e8dcc8;
+  margin: 0;
+  overflow: hidden;
+}
+
+.back-wall {
+  background: #f0ebe0;
+  border-bottom: 4px solid #d4c4a0;
+  padding: 0.75rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  min-height: 60px;
+}
+
+.wall-shelf {
+  display: flex;
+  gap: 0.5rem;
+  font-size: 1.5rem;
+}
+
+.shelf-jar { display: inline-block; }
+
+.wall-picture {
+  font-size: 2.5rem;
+  background: #f9f5ed;
+  border: 3px solid #c8b88a;
+  border-radius: 4px;
+  padding: 0.25rem;
+}
+
+/* Main counter */
+.counter-top {
+  background: #c8a870;
+  border-top: 6px solid #a07840;
+  border-bottom: 8px solid #8b6530;
+  padding: 1rem 1rem 1.2rem;
+  display: flex;
+  gap: 0.75rem;
+  align-items: flex-end;
+  overflow-x: auto;
+  min-height: 220px;
+  flex-wrap: wrap;
+}
+
+.counter-section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  position: relative;
+  min-width: 70px;
+}
+
+.counter-section:hover { transform: translateY(-4px); }
+.counter-section.dimmed { opacity: 0.35; filter: grayscale(60%); cursor: default; }
+.counter-section.dimmed:hover { transform: none; }
+.counter-section.hovered { transform: translateY(-8px); }
+
+/* Labels */
+.section-label {
+  font-family: var(--font-ar);
+  font-size: 0.7rem;
+  font-weight: 700;
+  color: #3d2000;
+  background: #f5ead0;
+  border: 1.5px solid #a07840;
+  border-radius: 4px;
+  padding: 2px 6px;
+  margin-top: 4px;
+  text-align: center;
+  white-space: nowrap;
+}
+
+.section-sublabel {
+  font-size: 0.6rem;
+  color: #6b4010;
+  font-family: 'Courier New', monospace;
+  margin-top: 2px;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+.item-price {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #8b4513;
+  margin-top: 2px;
+}
+
+/* Mood tooltip */
+.mood-tooltip {
+  position: absolute;
+  top: -44px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #3d2000;
+  color: var(--gold);
+  font-size: 0.7rem;
+  padding: 4px 10px;
+  border-radius: 8px;
+  white-space: nowrap;
+  z-index: 10;
+  pointer-events: none;
+  font-family: var(--font-ar);
+  animation: fade-in-up 0.2s ease;
+}
+
+.mood-tooltip::after {
+  content: '';
+  position: absolute;
+  top: 100%;
+  left: 50%;
+  transform: translateX(-50%);
+  border: 5px solid transparent;
+  border-top-color: #3d2000;
+}
+
+.mood-tooltip.small { font-size: 0.65rem; top: -38px; }
+
+/* ─── BREAD STACK ─── */
+.bread-section { cursor: default; }
+.bread-stack { position: relative; width: 60px; height: 55px; }
+.bread-round {
+  position: absolute;
+  width: 58px;
+  height: 20px;
+  background: #e8c870;
+  border: 2px solid #c8a840;
+  border-radius: 50%;
+  box-shadow: 0 2px 0 #a07820;
+}
+
+/* ─── SHAWARMA GRILL ─── */
+.grill-machine { width: 80px; }
+.grill-body {
+  width: 80px;
+  height: 130px;
+  background: #888;
+  border: 2px solid #666;
+  border-radius: 4px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: visible;
+}
+
+.grill-spit {
+  position: absolute;
+  top: -8px;
+  width: 4px;
+  height: 145px;
+  background: #555;
+  left: 50%;
+  transform: translateX(-50%);
+  z-index: 2;
+}
+
+.grill-meat {
+  width: 50px;
+  display: flex;
+  justify-content: center;
+  z-index: 3;
+  position: relative;
+}
+
+.meat-cone {
+  width: 40px;
+  height: 100px;
+  background: linear-gradient(180deg, #8b4513 0%, #c0722a 40%, #a0621e 80%);
+  clip-path: polygon(20% 0%, 80% 0%, 90% 100%, 10% 100%);
+  border-radius: 4px;
+  position: relative;
+}
+
+.meat-cone::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(0deg, transparent, transparent 8px, rgba(0,0,0,0.15) 8px, rgba(0,0,0,0.15) 10px);
+  border-radius: 4px;
+}
+
+.grill-section.hovered .grill-meat { animation: spin-dish 3s linear infinite; }
+
+.grill-flames {
+  position: absolute;
+  bottom: 4px;
+  display: flex;
+  gap: 4px;
+}
+
+.flame {
+  font-size: 1.2rem;
+  animation: float 0.8s ease-in-out infinite;
+  display: inline-block;
+}
+
+/* ─── FALAFEL ─── */
+.falafel-display {
+  position: relative;
+  width: 75px;
+  height: 55px;
+  background: #c8a870;
+  border: 2px solid #a07840;
+  border-radius: 6px;
+}
+
+.falafel-ball {
+  position: absolute;
+  width: 22px;
+  height: 18px;
+  background: radial-gradient(ellipse, #6b4010 0%, #4a2800 100%);
+  border-radius: 50%;
+  border: 1px solid #3d2000;
+}
+
+.falafel-section.hovered .falafel-ball { animation: roll-dish 1s ease-in-out infinite alternate; }
+
+/* ─── SALAD TRAYS ─── */
+.salad-group { cursor: default; min-width: 130px; }
+.salad-trays { display: flex; gap: 6px; }
+
+.salad-tray {
+  width: 62px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  position: relative;
+}
+
+.salad-tray:hover { transform: translateY(-4px); }
+.salad-tray.dimmed { opacity: 0.35; cursor: default; }
+.salad-tray.dimmed:hover { transform: none; }
+
+.tray-content {
+  background: #d4c4a0;
+  border: 2px solid #a07840;
+  border-radius: 6px;
+  height: 55px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.salad-tray.hovered .tray-content { animation: shake-dish 0.5s ease-in-out infinite; }
+
+.tray-label {
+  font-family: var(--font-ar);
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #3d2000;
+  background: #f5ead0;
+  border: 1px solid #a07840;
+  border-radius: 3px;
+  padding: 1px 4px;
+  margin-top: 3px;
+  text-align: center;
+}
+
+/* ─── SAUCES ─── */
+.sauce-section { cursor: default; }
+.sauce-bowl { display: flex; flex-direction: column; align-items: center; gap: 4px; }
+
+.bowl-body {
+  width: 60px;
+  height: 50px;
+  background: #f0ebe0;
+  border: 2px solid #c8b88a;
+  border-radius: 50% 50% 60% 60%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bowl-spoon {
+  width: 6px;
+  height: 40px;
+  background: #888;
+  border-radius: 3px;
+  transform: rotate(20deg);
+}
+
+.sauce-cups { display: flex; gap: 3px; }
+.sauce-cup {
+  width: 14px;
+  height: 18px;
+  background: #f0ebe0;
+  border: 1.5px solid #c8b88a;
+  border-radius: 2px 2px 4px 4px;
+}
+
+/* ─── FRYER GROUP ─── */
+.fryer-group { cursor: default; min-width: 120px; display: flex; flex-direction: column; align-items: center; }
+.fryer-item {
+  width: 55px;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+  position: relative;
+}
+
+.fryer-item:hover { transform: translateY(-4px); }
+.fryer-item.dimmed { opacity: 0.35; cursor: default; }
+.fryer-item.dimmed:hover { transform: none; }
+
+.fryer-box {
+  background: #555;
+  border: 2px solid #333;
+  border-radius: 4px;
+  height: 50px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.fryer-item.hovered .fryer-box { animation: fly-dish 0.6s ease-in-out infinite; }
+
+/* ─── FRIDGE ─── */
+.fridge-section { cursor: default; }
+.fridge-unit {
+  cursor: pointer;
+  transition: transform 0.2s;
+  position: relative;
+  text-align: center;
+}
+
+.fridge-unit:hover { transform: translateY(-4px); }
+.fridge-unit.dimmed { opacity: 0.35; cursor: default; }
+
+.fridge-body {
+  width: 75px;
+  height: 90px;
+  background: #d4e8f0;
+  border: 2px solid #a0c8d8;
+  border-radius: 4px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 2px;
+}
+
+.bottle { font-size: 1.2rem; }
+.fridge-unit.hovered .bottle { animation: sweat-dish 1s ease-in-out infinite; }
+
+/* ─── DRINKS MACHINE ─── */
+.drinks-section { cursor: pointer; }
+
+.drink-machine { width: 85px; }
+.machine-body {
+  background: #333;
+  border: 2px solid #222;
+  border-radius: 6px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 4px;
+}
+
+.machine-label-top {
+  font-size: 0.5rem;
+  color: #fff;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.05em;
+}
+
+.drink-tap {
+  display: flex;
+  align-items: center;
+  gap: 4px;
+  width: 100%;
+}
+
+.tap-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,0.3);
+}
+
+.drinks-section.hovered .drink-tap { animation: bubble-dish 0.5s ease-in-out infinite; }
+
+.drink-cups { display: flex; gap: 2px; margin-top: 2px; }
+.cup {
+  width: 10px;
+  height: 14px;
+  background: #f0ebe0;
+  border: 1px solid #c8b88a;
+  border-radius: 1px 1px 3px 3px;
+}
+
+/* ─── KABAB ─── */
+.kabab-grill {
+  background: #555;
+  border: 2px solid #333;
+  border-radius: 4px;
+  width: 80px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+}
+
+.grill-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.kabab-stick { font-size: 1.3rem; display: block; }
+.kabab-section.hovered .kabab-stick { animation: smoke-dish 0.8s ease-in-out infinite; }
+
+.smoke-cloud {
+  position: absolute;
+  top: -20px;
+  font-size: 1.5rem;
+  animation: float 1s ease-in-out infinite;
+}
+
+/* Counter front */
+.counter-front {
+  height: 30px;
+  background: #8b6530;
+  position: relative;
+  overflow: hidden;
+}
+
+.counter-stripe {
+  position: absolute;
+  inset: 0;
+  background: repeating-linear-gradient(90deg, #8b6530 0px, #8b6530 40px, #7a5520 40px, #7a5520 80px);
+}
+
+/* ─── RESULTS SECTION ─── */
+.results-section {
+  background: #f5f0e8;
+  padding: 1.5rem;
+}
+
+.results-header {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+  font-size: 0.9rem;
+  color: #6b4010;
+  font-weight: 600;
+}
+
+.search-badge {
+  background: #8b4513;
+  color: #fff;
+  padding: 2px 10px;
+  border-radius: 12px;
+  font-size: 0.8rem;
+}
+
+.results-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  gap: 0.75rem;
+}
+
+.result-card {
+  background: #fff;
+  border: 2px solid #c8b88a;
+  border-radius: 12px;
+  padding: 0.75rem 1rem;
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  cursor: pointer;
+  transition: transform 0.2s, box-shadow 0.2s;
+  box-shadow: 2px 2px 0 #c8b88a;
+}
+
+.result-card:hover {
+  transform: translateY(-3px);
+  box-shadow: 4px 6px 0 #a07840;
+}
+
+.card-emoji { font-size: 2.2rem; flex-shrink: 0; }
+
+.card-info { flex: 1; min-width: 0; }
+
+.card-name {
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: #3d2000;
+}
+
+.card-mood {
+  font-size: 0.75rem;
+  color: #8b6530;
+  margin-top: 2px;
+  font-style: italic;
+}
+
+.card-meta {
+  display: flex;
+  gap: 0.4rem;
+  margin-top: 5px;
+  flex-wrap: wrap;
+}
+
+.tag {
+  background: #f0e6d0;
+  color: #6b4010;
+  font-size: 0.65rem;
+  padding: 2px 7px;
+  border-radius: 10px;
+  border: 1px solid #c8b88a;
+}
+
+.card-price {
+  font-weight: 900;
+  font-size: 1.1rem;
+  color: #8b4513;
+  flex-shrink: 0;
+}
+
+.no-results {
+  grid-column: 1/-1;
+  text-align: center;
+  color: #8b6530;
+  padding: 3rem;
+  font-size: 1.1rem;
+}
+
+@media (max-width: 600px) {
+  .counter-top {
+    gap: 0.5rem;
+    padding: 0.75rem 0.5rem 1rem;
+    min-height: 170px;
+  }
+
+  .controls-bar {
+    padding: 0.6rem 0.8rem;
+    gap: 0.5rem;
+  }
+
+  .search-input { min-width: 120px; font-size: 0.8rem; }
+
+  .grill-body { width: 60px; height: 100px; }
+  .meat-cone { width: 30px; height: 75px; }
+  .grill-machine { width: 62px; }
+
+  .results-section { padding: 1rem; }
+
+  .results-grid {
+    grid-template-columns: 1fr;
+  }
+}

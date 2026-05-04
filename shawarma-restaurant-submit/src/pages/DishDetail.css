@@ -1,0 +1,379 @@
+.dish-page {
+  min-height: 100vh;
+  padding-top: 80px;
+  background: #f5f0e8;
+  direction: rtl;
+  padding-bottom: 4rem;
+}
+
+.back-btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin: 0 1.5rem 0;
+  padding: 0.5rem 1.2rem;
+  background: #3d2000;
+  color: var(--gold);
+  border-radius: 8px;
+  font-family: var(--font-ar);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+  border: none;
+}
+
+.back-btn:hover { background: #6b3a10; }
+
+/* Hero */
+.dish-hero {
+  display: flex;
+  align-items: center;
+  gap: 2rem;
+  padding: 2rem 1.5rem 1.5rem;
+  max-width: 700px;
+  margin: 0 auto;
+}
+
+.dish-hero-emoji {
+  font-size: 6rem;
+  flex-shrink: 0;
+  line-height: 1;
+}
+
+/* Mood animations on hero emoji */
+.anim-spin { animation: spin-dish 3s linear infinite; display: inline-block; }
+.anim-bounce { animation: bounce-dish 1s ease-in-out infinite; display: inline-block; }
+.anim-shake { animation: shake-dish 0.5s ease-in-out infinite; display: inline-block; }
+.anim-roll { animation: roll-dish 1.5s ease-in-out infinite alternate; display: inline-block; }
+.anim-fly { animation: fly-dish 1.2s ease-in-out infinite; display: inline-block; }
+.anim-bubble { animation: bubble-dish 1s ease-in-out infinite; display: inline-block; }
+.anim-smoke { animation: smoke-dish 1.5s ease-in-out infinite; display: inline-block; }
+.anim-drip { animation: drip-dish 1.5s ease-in-out infinite; display: inline-block; }
+.anim-sweat { animation: sweat-dish 2s ease-in-out infinite; display: inline-block; }
+.anim-fill { animation: fill-dish 1s ease-in-out infinite; display: inline-block; }
+.anim-sway { animation: sway-dish 2s ease-in-out infinite; display: inline-block; }
+
+.dish-title {
+  font-size: clamp(1.8rem, 4vw, 2.5rem);
+  font-weight: 900;
+  color: #3d2000;
+  margin-bottom: 0.3rem;
+}
+
+.dish-mood {
+  font-size: 1rem;
+  color: #8b6530;
+  font-style: italic;
+  margin-bottom: 0.5rem;
+}
+
+.dish-tags {
+  display: flex;
+  gap: 0.5rem;
+  margin-bottom: 0.5rem;
+}
+
+.dtag {
+  background: #8b4513;
+  color: #f5ead0;
+  font-size: 0.75rem;
+  padding: 3px 10px;
+  border-radius: 12px;
+  font-weight: 600;
+}
+
+.dish-price {
+  font-size: 1.8rem;
+  font-weight: 900;
+  color: #8b4513;
+}
+
+.dish-desc {
+  font-size: 0.9rem;
+  color: #5a3a1a;
+  margin-top: 0.5rem;
+  line-height: 1.6;
+}
+
+/* Making section */
+.making-section {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 1.5rem;
+}
+
+.making-header {
+  margin-bottom: 1.5rem;
+  border-bottom: 2px dashed #c8b88a;
+  padding-bottom: 0.75rem;
+}
+
+.making-header h2 {
+  font-size: 1.4rem;
+  font-weight: 900;
+  color: #3d2000;
+}
+
+.making-header p {
+  font-size: 0.85rem;
+  color: #8b6530;
+  margin-top: 0.25rem;
+}
+
+/* Pita visualization */
+.pita-area {
+  background: #fff;
+  border: 2px solid #c8b88a;
+  border-radius: 16px;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  box-shadow: 3px 3px 0 #c8b88a;
+}
+
+.pita-bread {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100px;
+  position: relative;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.pita-emoji {
+  font-size: 4rem;
+  position: relative;
+}
+
+.pita-ingredients {
+  position: relative;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+  align-items: center;
+  min-width: 200px;
+}
+
+.dropped-ingredient {
+  font-size: 1.8rem;
+  animation: ingredient-drop 0.5s ease forwards;
+  display: inline-block;
+}
+
+.done-flash {
+  position: absolute;
+  top: -20px;
+  left: 50%;
+  transform: translateX(-50%);
+  background: #27ae60;
+  color: #fff;
+  padding: 4px 16px;
+  border-radius: 12px;
+  font-size: 1rem;
+  font-weight: 700;
+  animation: bounce-dish 0.5s ease;
+  white-space: nowrap;
+}
+
+/* Progress */
+.progress-track {
+  position: relative;
+  background: #f0e6d0;
+  border: 1.5px solid #c8b88a;
+  border-radius: 20px;
+  height: 24px;
+  margin-top: 1rem;
+  overflow: hidden;
+}
+
+.progress-fill {
+  height: 100%;
+  background: linear-gradient(90deg, #8b4513, #c0722a);
+  border-radius: 20px;
+  transition: width 0.4s ease;
+}
+
+.progress-text {
+  position: absolute;
+  top: 50%;
+  right: 10px;
+  transform: translateY(-50%);
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #3d2000;
+}
+
+/* Steps grid */
+.steps-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(130px, 1fr));
+  gap: 0.75rem;
+  margin-bottom: 1rem;
+}
+
+.step-btn {
+  background: #fff;
+  border: 2px solid #c8b88a;
+  border-radius: 12px;
+  padding: 0.75rem 0.5rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.3rem;
+  cursor: pointer;
+  transition: all 0.2s;
+  position: relative;
+  font-family: var(--font-ar);
+  box-shadow: 2px 2px 0 #c8b88a;
+}
+
+.step-btn:not(:disabled):hover {
+  transform: translateY(-3px);
+  box-shadow: 3px 5px 0 #a07840;
+}
+
+.step-btn.next {
+  border-color: #8b4513;
+  background: #fff9f0;
+  box-shadow: 2px 2px 0 #8b4513;
+}
+
+.step-btn.done {
+  background: #f0faf0;
+  border-color: #27ae60;
+  box-shadow: 2px 2px 0 #27ae60;
+  cursor: default;
+}
+
+.step-btn.animating {
+  transform: scale(0.95);
+}
+
+.step-btn:disabled:not(.done) {
+  opacity: 0.45;
+  cursor: not-allowed;
+  transform: none;
+}
+
+.step-num {
+  font-size: 0.65rem;
+  font-weight: 700;
+  color: #8b6530;
+}
+
+.step-icon {
+  font-size: 1.8rem;
+  display: inline-block;
+}
+
+.step-icon.dropping {
+  animation: ingredient-drop 0.5s ease;
+}
+
+.step-label {
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #3d2000;
+  text-align: center;
+}
+
+.step-check {
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  font-size: 0.9rem;
+  color: #27ae60;
+  font-weight: 900;
+}
+
+.step-pulse {
+  position: absolute;
+  top: 4px;
+  left: 8px;
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #8b4513;
+  animation: glow-pulse 1s ease-in-out infinite;
+}
+
+/* Step description */
+.step-desc-box {
+  background: #f5f0e8;
+  border: 2px solid #c8b88a;
+  border-radius: 8px;
+  padding: 0.75rem 1rem;
+  font-size: 0.9rem;
+  color: #5a3a1a;
+  text-align: center;
+  margin-bottom: 1rem;
+  animation: fade-in-up 0.3s ease;
+}
+
+/* Done banner */
+.done-banner {
+  background: #f0faf0;
+  border: 3px solid #27ae60;
+  border-radius: 16px;
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 1.5rem;
+  animation: bounce-dish 0.5s ease;
+  box-shadow: 3px 3px 0 #27ae60;
+}
+
+.done-emoji { font-size: 4rem; margin-bottom: 0.5rem; animation: bounce-dish 1s ease-in-out infinite; display: block; }
+.done-text { font-size: 1rem; color: #1a5c2a; font-weight: 700; margin-bottom: 1rem; }
+
+.reset-btn {
+  background: #3d2000;
+  color: var(--gold);
+  padding: 0.6rem 1.5rem;
+  border-radius: 8px;
+  font-family: var(--font-ar);
+  font-size: 0.9rem;
+  font-weight: 700;
+  cursor: pointer;
+  border: none;
+  transition: background 0.2s;
+}
+
+.reset-btn:hover { background: #6b3a10; }
+
+/* Ingredients */
+.ingredients-section {
+  margin-top: 1.5rem;
+  border-top: 2px dashed #c8b88a;
+  padding-top: 1rem;
+}
+
+.ingredients-section h3 {
+  font-size: 1rem;
+  font-weight: 700;
+  color: #3d2000;
+  margin-bottom: 0.75rem;
+}
+
+.ingredients-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.ingredient-tag {
+  background: #fff;
+  border: 1.5px solid #c8b88a;
+  color: #5a3a1a;
+  font-size: 0.8rem;
+  padding: 4px 12px;
+  border-radius: 16px;
+  box-shadow: 1px 1px 0 #c8b88a;
+}
+
+@media (max-width: 600px) {
+  .dish-hero { flex-direction: column; text-align: center; gap: 1rem; }
+  .dish-hero-emoji { font-size: 5rem; }
+  .dish-tags { justify-content: center; }
+  .steps-grid { grid-template-columns: repeat(2, 1fr); }
+}

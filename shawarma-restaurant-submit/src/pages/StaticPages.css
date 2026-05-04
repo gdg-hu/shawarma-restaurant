@@ -1,0 +1,214 @@
+.static-page {
+  min-height: 100vh;
+  padding: 80px 1.5rem 3rem;
+  background: #f5f0e8;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+  direction: rtl;
+}
+
+/* ─── CERTIFICATE ─── */
+.certificate {
+  background: #fdf8f0;
+  border: 3px solid #c8b88a;
+  border-radius: 8px;
+  padding: 2rem;
+  max-width: 600px;
+  width: 100%;
+  box-shadow: 6px 6px 0 #c8b88a, 12px 12px 0 rgba(200,184,138,0.3);
+  position: relative;
+}
+
+.cert-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 1rem;
+}
+
+.cert-seal { font-size: 2.5rem; }
+
+.cert-title-block { text-align: center; }
+
+.cert-title {
+  font-size: 1.6rem;
+  font-weight: 900;
+  color: #3d2000;
+}
+
+.cert-subtitle {
+  font-size: 0.85rem;
+  color: #8b6530;
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.1em;
+}
+
+.cert-num {
+  font-size: 0.7rem;
+  color: #c8b88a;
+  font-family: 'Courier New', monospace;
+  margin-top: 0.25rem;
+}
+
+.cert-divider {
+  border: none;
+  border-top: 2px dashed #c8b88a;
+  margin: 1.25rem 0;
+}
+
+.cert-text {
+  font-size: 0.95rem;
+  color: #3d2000;
+  line-height: 1.8;
+  text-align: center;
+}
+
+.cert-section-title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: #3d2000;
+  margin-bottom: 1rem;
+}
+
+.team-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+  gap: 1rem;
+  margin-bottom: 0.5rem;
+}
+
+.team-card {
+  background: #fff;
+  border: 2px solid #c8b88a;
+  border-radius: 12px;
+  padding: 1rem 0.75rem;
+  text-align: center;
+  box-shadow: 2px 2px 0 #c8b88a;
+}
+
+.team-emoji { font-size: 2.5rem; margin-bottom: 0.4rem; }
+.team-name { font-weight: 700; color: #3d2000; font-size: 0.95rem; }
+.team-role { font-size: 0.72rem; color: #8b6530; margin-top: 0.25rem; }
+
+.tech-list { display: flex; flex-direction: column; gap: 0.5rem; }
+.tech-item {
+  background: #fff;
+  border: 1.5px solid #c8b88a;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  font-size: 0.85rem;
+  color: #3d2000;
+}
+
+.cert-footer {
+  text-align: center;
+  font-size: 0.8rem;
+  color: #8b6530;
+  font-family: 'Courier New', monospace;
+}
+
+.cert-stamp {
+  position: absolute;
+  bottom: 1.5rem;
+  left: 2rem;
+  background: rgba(139, 69, 19, 0.12);
+  border: 3px solid rgba(139, 69, 19, 0.4);
+  border-radius: 50%;
+  width: 80px;
+  height: 80px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: #8b4513;
+  transform: rotate(-15deg);
+}
+
+/* ─── BACK DOOR (login/register) ─── */
+.back-door {
+  background: #1a1510;
+  border: 3px solid #8b4513;
+  border-radius: 12px;
+  padding: 2rem;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 0 40px rgba(139,69,19,0.3);
+  text-align: center;
+}
+
+.door-sign {
+  font-size: 1.5rem;
+  font-weight: 900;
+  color: var(--gold);
+  animation: sign-glow 2.5s ease-in-out infinite;
+}
+
+.door-sub {
+  font-size: 0.8rem;
+  color: var(--gold-dim);
+  font-family: 'Courier New', monospace;
+  letter-spacing: 0.1em;
+  margin-top: 0.25rem;
+}
+
+.keypad-area { margin-top: 1.5rem; }
+
+.keypad-icon {
+  font-size: 3.5rem;
+  margin-bottom: 1rem;
+  animation: float 3s ease-in-out infinite;
+  display: block;
+}
+
+.login-form {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  text-align: right;
+}
+
+.form-label {
+  font-size: 0.8rem;
+  color: var(--gold-dim);
+  font-weight: 600;
+}
+
+.form-input {
+  width: 100%;
+  padding: 0.6rem 0.9rem;
+  background: #0d0b08;
+  border: 1.5px solid #5a3a1a;
+  border-radius: 8px;
+  color: var(--cream);
+  font-family: var(--font-ar);
+  font-size: 0.9rem;
+  outline: none;
+  transition: border-color 0.2s;
+}
+
+.form-input:focus { border-color: var(--gold); }
+
+.form-btn {
+  margin-top: 0.75rem;
+  padding: 0.7rem;
+  background: #8b4513;
+  color: #f5ead0;
+  border: none;
+  border-radius: 8px;
+  font-family: var(--font-ar);
+  font-size: 1rem;
+  font-weight: 700;
+  cursor: pointer;
+  transition: background 0.2s;
+}
+
+.form-btn:hover { background: #c0722a; }
+
+.form-note {
+  margin-top: 1rem;
+  font-size: 0.72rem;
+  color: #5a3a1a;
+  line-height: 1.5;
+}
