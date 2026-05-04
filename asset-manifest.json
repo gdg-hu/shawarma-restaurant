@@ -1,0 +1,13 @@
+{
+  "files": {
+    "main.css": "/shawarma-restaurant/static/css/main.dd652f07.css",
+    "main.js": "/shawarma-restaurant/static/js/main.0ac2a3ce.js",
+    "index.html": "/shawarma-restaurant/index.html",
+    "main.dd652f07.css.map": "/shawarma-restaurant/static/css/main.dd652f07.css.map",
+    "main.0ac2a3ce.js.map": "/shawarma-restaurant/static/js/main.0ac2a3ce.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.dd652f07.css",
+    "static/js/main.0ac2a3ce.js"
+  ]
+}
